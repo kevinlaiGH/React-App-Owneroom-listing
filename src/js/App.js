@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../images/house-location-pin.svg';
 import Card from './Card';
+import GoogleMap from './GoogleMap';
 import data from './data/Data';
 
 class App extends React.Component {
@@ -98,25 +99,24 @@ class App extends React.Component {
 
           <div className="cards container">
             <div className="cards-list row ">
-              {properties.map(property => {
-                return <Card
-                  key={property._id}
-                  property={property}
-                  activeProperty={activeProperty}
-                />
-              })}
 
+              {
+                properties.map(property => {
+                  return <Card
+                    key={property._id}
+                    property={property}
+                    activeProperty={activeProperty}
+                  />
+                })
+              }
 
             </div>
           </div>
         </div>
         {/* listings - End */}
 
-        {/* mapContainer - Start */}
-        <div className="mapContainer">
-          <div id="map"></div>
-        </div>
-        {/* mapContainer - End */}
+        <GoogleMap properties={properties} activeProperty={activeProperty} />
+
       </div>
     )
   }

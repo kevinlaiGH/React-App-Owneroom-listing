@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Card = ({ property, activeProperty }) => {
+
     const { price, address, city, picture, bedrooms, bathrooms, carSpaces } = property;
-    return <div id="card-0" className="card col-sm-12 col-md-6 col-lg-4 ${property === activeProperty ? 'is-active' : ''}">
-        <img src={picture} alt="Singer" />
+
+    return <div id="card-0" className={`card col-sm-12 col-md-6 col-lg-4 ${property === activeProperty ? 'is-active' : ''}`}>
+        <img src={picture} alt={city} />
         <p className="price">{price}</p>
         <div className="details">
             <span className="index">1</span>
