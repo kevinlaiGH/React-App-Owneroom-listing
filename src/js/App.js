@@ -14,7 +14,18 @@ class App extends React.Component {
       activeProperty: data.properties[0]
     }
 
+    this.setActiveProperty = this.setActiveProperty.bind(this);
+
   }
+
+  setActiveProperty(property) {
+
+    this.setState({
+      activeProperty: property
+    })
+
+  }
+
   render() {
     const { properties, activeProperty } = this.state;
     return (
@@ -115,7 +126,11 @@ class App extends React.Component {
         </div>
         {/* listings - End */}
 
-        <GoogleMap properties={properties} activeProperty={activeProperty} />
+        <GoogleMap
+          properties={properties}
+          activeProperty={activeProperty}
+          setActiveProperty={this.setActiveProperty}
+        />
 
       </div>
     )
