@@ -40,6 +40,7 @@
     "webpack-dev-server": "2.5.1"
   },
   "dependencies": {
+    "jump.js": "^1.0.2",
     "prop-types": "15.5.10",
     "react": "15.4.2",
     "react-dom": "15.4.2"
