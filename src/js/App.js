@@ -20,19 +20,22 @@ class App extends React.Component {
 
   }
 
-  setActiveProperty(property) {
+  setActiveProperty(property, scroll) {
     const { index } = property;
 
     this.setState({
       activeProperty: property
     })
 
-    // scroll to the right property
-    const target = `#card-${index}`;
-    jump(target, {
-      duration: 800,
-      easing: easeInOutCubic
-    })
+    // only scroll if we click on the pin, not the card
+    if (scroll) {
+      // scroll to the right property
+      const target = `#card-${index}`;
+      jump(target, {
+        duration: 800,
+        easing: easeInOutCubic
+      })
+    }
 
   }
 
@@ -127,6 +130,7 @@ class App extends React.Component {
                     key={property._id}
                     property={property}
                     activeProperty={activeProperty}
+                    setActiveProperty={this.setActiveProperty}
                   />
                 })
               }
