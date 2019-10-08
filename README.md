@@ -3,7 +3,7 @@
 ## React App
 
 ### Deployment link
-https://owneroom-listing.netlify.com/
+https://rental-property-listing.netlify.com
 
 
 #Deliverables
